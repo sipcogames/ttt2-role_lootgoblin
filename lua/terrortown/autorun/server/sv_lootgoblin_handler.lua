@@ -139,7 +139,7 @@ hook.Add("TTT2ModifyWinningAlives", "CheckLootGoblinTeamSwitch", function(alives
     -- Find and change Loot Goblin team to winning team
     for _, ply in ipairs(player.GetAll()) do
       if (not IsValid(ply) or not ply:Alive()) then continue end
-			if (SpecDM and (ply.IsGhost and ply:IsGhost() or (vics.IsGhost and vics:IsGhost()))) then continue end
+      if (SpecDM and ply.IsGhost and ply:IsGhost()) then continue end
 
       if (ply:GetSubRole() == ROLE_LOOTGOBLIN) then
       	if (winningTeam == "") then --only goblin wins
